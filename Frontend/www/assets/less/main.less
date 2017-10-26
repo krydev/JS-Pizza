@@ -20,6 +20,10 @@ p{
   color: lighten(@textColor, 10%);
 }
 
+button:focus{
+  outline: none !important;
+}
+
 #cart{
   display: inline-block;
   z-index: 100;
@@ -58,9 +62,6 @@ p{
         margin-left: 10px;
         text-decoration: none;
         color: #9b9b9b;
-        &:focus{
-          outline: none;
-        }
       }
     }
 
@@ -125,9 +126,6 @@ p{
             //line-height: 30px;
             border-radius: 50%;
             text-align: center;
-            &:focus{
-              outline: none;
-            }
 
             span{
               color:white;
