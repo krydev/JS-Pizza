@@ -333,17 +333,22 @@ button:focus{
     color: @titleColor;
     font-size: 16px;
 
+  }
 
+  .unclicked-btn{
     &:hover{
       background-color: rgba(224, 234, 230, 0.63);
     }
 
     &:focus{
-      background-color: lighten(@titleColor, 5%);
-      color:white;
+      background-color: darken(rgba(224, 234, 230, 0.63), 10%);
     }
   }
 
+  .clicked-btn{
+    background-color: lighten(@titleColor, 5%);
+    color:white;
+  }
 }
 .amount-label{
   display: inline-block;
