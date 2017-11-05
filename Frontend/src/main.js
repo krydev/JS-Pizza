@@ -11,7 +11,10 @@ $(function(){
     PizzaCart.initialiseCart();
     PizzaMenu.initialiseMenu();
     initFilterBtns(PizzaMenu);
+    $("#clear-cart").click(PizzaCart.clearCart);
 });
+
+
 
 function initFilterBtns(PizzaMenu) {
     var filter_btns = $(".btn-filter");
