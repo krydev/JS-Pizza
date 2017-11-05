@@ -18,12 +18,12 @@
 
 </head>
 <body>
-    <div id="cart" style="height: 100%">
+    <div class="right-panel" style="height: 100%">
         <div class="header">
             <div class="outer">
                 <div class="title-block">
                     <span class="title-text">Замовлення</span>
-                    <span class="amount-label"><span>3</span></span>
+                    <span class="amount-label"><span>0</span></span>
                 </div>
                     <button type="button" class="btn btn-link">
                         Очистити замовлення
@@ -31,103 +31,23 @@
             </div>
         </div>
         <div class="action-block">
-            <div class="orders" style="height: calc(100% - 200px)">
-                <div class="order-template">
-                    <div class="pizza-title">
-                        BBQ (Мала)
-                    </div>
-                    <div class="stats-block">
-                        <span class="pizza-stats">
-                            <img class="icon" src="assets/images/size-icon.svg">
-                            <span>30</span>
-                        </span>
-                        <span class="pizza-stats">
-                            <img class="icon" src="assets/images/weight.svg">
-                            <span>460</span>
-                        </span>
-                    </div>
-                    <div class="amount-toggler-block">
-                        <span class="price">556грн</span>
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                        <span class="quantity">4</span>
-                        <button type="button" class="btn btn-success">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </button>
-                    </div>
-                    <img class="pizza-logo" src="assets/images/pizza_2.jpg">
-                </div>
-                <div class="order-template">
-                    <div class="pizza-title">
-                        Россо Густо (Мала)
-                    </div>
-                    <div class="stats-block">
-                        <span class="pizza-stats">
-                            <img class="icon" src="assets/images/size-icon.svg">
-                            <span>30</span>
-                        </span>
-                        <span class="pizza-stats">
-                            <img class="icon" src="assets/images/weight.svg">
-                            <span>400</span>
-                        </span>
-                    </div>
-                    <div class="amount-toggler-block">
-                        <span class="price">189грн</span>
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                        <span class="quantity">1</span>
-                        <button type="button" class="btn btn-success">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </button>
-                    </div>
-                    <img class="pizza-logo" src="assets/images/pizza_4.jpg">
-                </div>
-                <div class="order-template">
-                    <div class="pizza-title">
-                        Міксовий поло (Велика)
-                    </div>
-                    <div class="stats-block">
-                        <span class="pizza-stats">
-                            <img class="icon" src="assets/images/size-icon.svg">
-                            <span>40</span>
-                        </span>
-                        <span class="pizza-stats">
-                            <img class="icon" src="assets/images/weight.svg">
-                            <span>780</span>
-                        </span>
-                    </div>
-                    <div class="amount-toggler-block">
-                        <span class="price">179грн</span>
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                        <span class="quantity">1</span>
-                        <button type="button" class="btn btn-success">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </button>
-                    </div>
-                    <img class="pizza-logo" src="assets/images/pizza_1.jpg">
-                </div>
+            <div class="empty-cart-text">
+                Пусто в холодильнику?<br/>
+                Замовте піцу!
+            </div>
+            <div id="cart" style="height: calc(100% - 200px)">
+
             </div>
             <div class="summary">
                 <div class="order-sum">
                     <div class="outer">
                         <span class="title"><span>Сума замовлення</span></span>
-                        <span class="number">924 грн</span>
+                        <span class="number"><span>0</span> грн</span>
                     </div>
                 </div>
-                <a href="#" class="order-button btn btn-warning" id="btn-order"><span>Замовити</span></a>
+                <div class="order-button disabled">
+                    <a href="#" class="btn btn-warning disabled" id="btn-order"><span>Замовити</span></a>
+                </div>
             </div>
         </div>
     </div>

@@ -55,7 +55,7 @@ function getIngredientsArray(pizza) {
                         </div>
                         <div class="price"><%= pizza.small_size.price %></div>
                         <span>грн.</span>
-                        <div><%- getBuyButton("buy-button-small")%></div>
+                        <div><%- getBuyButton("buy-btn-small")%></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="pizza-stats">
@@ -68,16 +68,16 @@ function getIngredientsArray(pizza) {
                         </div>
                         <div class="price"><%= pizza.big_size.price %></div>
                         <span>грн.</span>
-                        <div><%- getBuyButton("buy-button-big")%></div>
+                        <div><%- getBuyButton("buy-btn-big")%></div>
                     </div>
                 <% } else {%>
                 <div class="col-sm-12">
                     <% if(pizza.big_size) {
                         var stats = pizza.big_size;
-                        var btn_type = "buy-button-big";
+                        var btn_type = "buy-btn-big";
                     } else {
                         stats = pizza.small_size;
-                        btn_type = "buy-button-small";
+                        btn_type = "buy-btn-small";
                     }%>
                     <div class="pizza-stats">
                         <img class="icon" src="assets/images/size-icon.svg">

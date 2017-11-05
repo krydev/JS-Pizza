@@ -18,6 +18,16 @@ var $cart = $("#cart");
 function addToCart(pizza, size) {
     //Додавання однієї піци в кошик покупок
 
+    $(".empty-cart-text").css("display", "none");
+    var totalCount = $(".right-panel .amount-label span");
+    totalCount.text(parseInt(totalCount.text(), "10") + 1);
+
+    $(".order-sum").css("display", "inline-block");
+    var totalPrice = $(".order-sum .number span");
+    totalPrice.text(parseInt(totalPrice.text(), "10") + pizza[size].price);
+
+    $(".order-button, #btn-order").removeClass("disabled");
+
     //Приклад реалізації, можна робити будь-яким іншим способом
     Cart.push({
         pizza: pizza,
