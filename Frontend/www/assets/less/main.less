@@ -5,6 +5,12 @@
 @smallScreens: ~"only screen and (max-width: 750px)";
 
 @import "pizza/pizza-card";
+@import "cart";
+@import "orderPage";
+
+html{
+  background-color: white;
+}
 
 body{
   font-family: Vollkorn, Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
@@ -28,234 +34,6 @@ button:focus{
   cursor: not-allowed;
 }
 
-.right-panel{
-  display: inline-block;
-  z-index: 50;
-  right: 0;
-  top: 0;
-  width: @orderPanelWidth;
-  position: fixed;
-  background-color: white;
-
-  .header{
-    height: @infoBarHeight;
-    position: relative;
-    text-align: center;
-
-    .outer{
-      width: 100%;
-      height: 50%;
-      position: absolute;
-      bottom: 10px;
-      .title-block{
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-      }
-      .title-text{
-        font-size: 22px;
-      }
-
-      .amount-label span{
-        vertical-align: middle;
-        font-size: 12px;
-        //font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif
-      }
-
-      .btn-link{
-        font-size: 11px;
-        margin-left: 10px;
-        text-decoration: none;
-        color: #9b9b9b;
-      }
-    }
-
-  }
-
-  .action-block{
-    height: 100%;
-    box-shadow: -8px 0 8px -4px #c4c4c4;
-    position: relative;
-
-    .empty-cart-text{
-      display: inline-block;
-      position: absolute;
-      top: 10%;
-      left: @orderPanelWidth / 4;
-      text-align: center;
-      font-size: 18px;
-    }
-    #cart{
-      overflow: auto;
-      box-sizing: border-box;
-      background-color: #f3f3f3;
-      border-bottom: 1px solid #e1e1e1;
-
-      .order-template{
-        overflow: hidden;
-        position: relative;
-        border-bottom: 1px solid #e1e1e1;
-        div{
-          padding: 5px;
-          padding-left: 18px;
-        }
-
-        .pizza-logo{
-          position: absolute;
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          top: 10px;
-          right: -50px;
-        }
-
-        .pizza-title{
-          font-size: 21px;
-          color: @titleColor;
-        }
-
-        .stats-block{
-          .pizza-stats{
-            padding-right: 10px;
-          }
-
-        }
-        .amount-toggler-block{
-          padding-top: 2px;
-          padding-bottom: 10px;
-          .price, .quantity{
-            font-size: 14px;
-            font-weight: 700;
-            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-            margin-right: 10px;
-          }
-
-          .quantity{
-            margin-left: 10px;
-          }
-          .btn{
-            padding-left: 0;
-            padding-right: 0;
-            width: 30px;
-            height: 30px;
-            //line-height: 30px;
-            border-radius: 50%;
-            text-align: center;
-
-            span{
-              color:white;
-            }
-          }
-          .btn-success{
-            padding-left: 2px;
-          }
-
-          .btn-default {
-            margin-left: 20px;
-            width:31px;
-            height: 31px;
-            box-shadow: 0 -3px 8px 4px #eeeeee inset;
-            span {
-              color: @titleColor;
-            }
-          }
-        }
-      }
-    }
-
-    .summary{
-      position: relative;
-      margin-top: -2px;
-      height: 200px;
-
-      .order-sum{
-        display: none;
-        width: 100%;
-        height: 25%;
-        position: absolute;
-        top: -20px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        background-color: white;
-        text-align: center;
-        border-top: 1px solid #e1e1e1;;
-
-        .outer{
-          width: 100%;
-          height: 60%;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-
-          span{
-            display: inline-block;
-            height: 100%;
-            font-size: 22px;
-            color: @textColor;
-            font-weight: 600;
-          }
-
-          .title{
-            position: absolute;
-            left: 8px;
-            span{
-              font-size: 18px;
-              vertical-align: bottom;
-            }
-
-          }
-
-          .number{
-            position: absolute;
-            right: 8px;
-            span{
-              font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-            }
-          }
-        }
-
-      }
-
-      .order-button, #btn-order{
-        display: inline-block;
-        width: 82%;
-        height: 45px;
-        position: absolute;
-        top: 17%;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        text-align: center;
-
-        #btn-order{
-          display: inline-block;
-          width: 100%;
-          height: 100%;
-
-          background-color: darken(@warningColor, 5%);
-          border-color: darken(@warningColor, 12%);
-
-          &:hover{
-            background-color: darken(@warningColor, 9%);
-          }
-
-          span{
-            color: white;
-            font-size: 20px;
-          }
-        }
-
-      }
-    }
-  }
-
-}
 
 .top-info-bar{
   position: fixed;
@@ -345,11 +123,11 @@ button:focus{
   padding-right: @orderPanelWidth + 20px;
   max-width: 1250px;
   min-width: 595px;
-  margin-top: 25px;
+  padding-top: 25px;
 }
 
 .navigation-bar{
-  margin-top: @orderPanelWidth / 3;
+  padding-top: @orderPanelWidth / 3;
   text-align: center;
   min-width: 295px;
 
@@ -412,15 +190,15 @@ button:focus{
 
   .bottom-border{
     transform: rotate(180deg);
-    margin-top: -10px;
+    margin-top: -11px;
   }
 
   .content{
     border: darken(#ea862e, 10%) solid 1px;
-    border-bottom: none;
+    border-bottom: solid 1px #ea862e;
     text-align: center;
     background: #ea862e;
-    padding: 14px;
+    padding: 15px;
 
     .message-block {
       display: inline-block;
@@ -450,7 +228,7 @@ button:focus{
   width: 100px;
 
   .top-border{
-    margin-bottom: -9px;
+    padding-top: 10px;
   }
 
   .content {
@@ -480,11 +258,14 @@ button:focus{
 }
 
 footer{
-  padding: 4%;
+  padding: 40px;
+  padding-right: @orderPanelWidth + 30px;
+  min-height: 150px;
   border-top: 1px solid #e1e1e1;
   background-color: white;
   position: relative;
   text-align: center;
+  font-size: 15px;
 
   p{
     color: #7c7c7c;

@@ -21,6 +21,7 @@ var Cart_Info = {
 //HTML едемент куди будуть додаватися піци
 var $cart = $("#cart");
 
+
 function addToCart(pizza, size) {
     //Додавання однієї піци в кошик покупок
 

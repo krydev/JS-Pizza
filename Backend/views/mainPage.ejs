@@ -1,0 +1,24 @@
+<% include common/header.ejs %>
+
+<div class="navigation-bar" style="width: calc(100% - 340px)">
+    <div class="page-title-row" >
+        <span class="title-text">Усі піци</span>
+        <span class="amount-label"><span>8</span></span>
+    </div>
+    <div class="categories">
+        <button type="button" class="btn btn-warning btn-filter unclicked-btn" id="all">Усі</button>
+        <button type="button" class="btn btn-warning btn-filter unclicked-btn" id="meat">М'ясні</button>
+        <button type="button" class="btn btn-warning btn-filter unclicked-btn" id="pineapple">Із ананасами</button>
+        <button type="button" class="btn btn-warning btn-filter unclicked-btn" id="mushroom">Із грибами</button>
+        <button type="button" class="btn btn-warning btn-filter unclicked-btn" id="ocean">Із морепродуктами</button>
+        <button type="button" class="btn btn-warning btn-filter unclicked-btn" id="veg">Вега</button>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row" id="pizza_list">
+
+    </div>
+
+</div>
+
+<% include common/footer.ejs %>

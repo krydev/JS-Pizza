@@ -31,7 +31,8 @@ module.exports = function(grunt) {
     //Налаштування відстежування змін в проекті
     var watchDebug = {
         options: {
-            'no-beep': true
+            'no-beep': true,
+            'livereload': true
         },
         //Назва завдання будь-яка
         scripts: {

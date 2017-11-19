@@ -4,6 +4,15 @@
     "small_size" : "Мала"
 }%>
 
+<% if($("#btn-order").length === 0) {
+    var ending = (quantity > 0 && quantity < 5) ? "піци" : "піц";
+    var quantityStr = quantity + " " + ending;
+    var displayStyle = "none";
+} else {
+    quantityStr = quantity;
+    displayStyle = "inline-block"
+}%>
+
 <div class="order-template">
     <div class="pizza-title">
         <%= pizza.title %> (<%= sizeMap[size] %>)
@@ -20,14 +29,14 @@
     </div>
     <div class="amount-toggler-block">
         <span class="price"><%= pizza[size].price %> грн</span>
-        <button type="button" class="btn btn-danger minus">
+        <button type="button" class="btn btn-danger minus" style="display: <%=displayStyle %>">
             <span class="glyphicon glyphicon-minus"></span>
         </button>
-        <span class="quantity"><%= quantity %></span>
-        <button type="button" class="btn btn-success plus">
+        <span class="quantity"><%= quantityStr %></span>
+        <button type="button" class="btn btn-success plus" style="display: <%=displayStyle %>">
             <span class="glyphicon glyphicon-plus"></span>
         </button>
-        <button type="button" class="btn btn-default remove">
+        <button type="button" class="btn btn-default remove" style="display: <%=displayStyle %>">
             <span class="glyphicon glyphicon-remove"></span>
         </button>
     </div>
