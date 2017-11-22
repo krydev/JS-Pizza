@@ -3,7 +3,8 @@
  */
 var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
-var Pizza_List = require('../Pizza_List');
+var API = require('../API');
+var Pizza_List = [];
 
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
@@ -41,35 +42,46 @@ function showPizzaList(list) {
 }
 
 function filterPizza(filter) {
-
-    var list_title = $(".page-title-row");
     if(filter === "all"){
-        list_title.find(".title-text").text(category_titles.all);
+        return API.getPizzaList(function (err, server_data) {
+            var list_title = $(".page-title-row");
+            var Pizza_List = [];
+            if(err){
+                console.log('An error occurred while trying to retrieve the pizza list.');
+            } else {
+                var vals = Object.values(server_data);
+                vals.forEach(function (t) { Pizza_List.push(t) });
+                // console.log(list[7]);
+            }
+            list_title.find(".title-text").text(category_titles.all);
+            list_title.find(".amount-label span").text(Pizza_List.length);
+            return showPizzaList(Pizza_List);
+        });
+    }
+    API.getPizzaList(function (err, server_data) {
+        var list_title = $(".page-title-row");
+        var Pizza_List = [];
+        if(err){
+            console.log('An error occurred while trying to retrieve the pizza list.');
+        } else {
+            var vals = Object.values(server_data);
+            vals.forEach(function (pizza) {
+                if (pizza.content.hasOwnProperty(filter)){
+                    Pizza_List.push(pizza);
+                }
+            });
+            // console.log(list[7]);
+        }
+        list_title.find(".title-text").text(category_titles[filter]);
         list_title.find(".amount-label span").text(Pizza_List.length);
         return showPizzaList(Pizza_List);
-    }
-    //Масив куди потраплять піци які треба показати
-    var pizza_shown = [];
-
-    Pizza_List.forEach(function(pizza){
-
-        if (pizza.content.hasOwnProperty(filter)){
-            pizza_shown.push(pizza);
-        }
-
     });
-
-    //Показати відфільтровані піци
-    showPizzaList(pizza_shown);
-    list_title.find(".title-text").text(category_titles[filter]);
-    list_title.find(".amount-label span").text(pizza_shown.length);
 }
 
 function initialiseMenu() {
-    //Показуємо усі піци
-    filterPizza("all");
-    showPizzaList(Pizza_List);
+    $("#all").click();
 }
+
 
 exports.filterPizza = filterPizza;
 exports.initialiseMenu = initialiseMenu;

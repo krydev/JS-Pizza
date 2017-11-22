@@ -78,6 +78,10 @@ function getPizzaInCart() {
     return Cart;
 }
 
+function getTotalOrderSum() {
+    return Cart_Info.total_price;
+}
+
 function updateCart() {
     //Функція викликається при зміні вмісту кошика
     //Тут можна наприклад показати оновлений кошик на екрані та зберегти вміт кошика в Local Storage
@@ -161,6 +165,7 @@ exports.addToCart = addToCart;
 exports.clearCart = clearCart;
 
 exports.getPizzaInCart = getPizzaInCart;
+exports.getTotalOrderSum = getTotalOrderSum;
 exports.initialiseCart = initialiseCart;
 
 exports.PizzaSize = PizzaSize;

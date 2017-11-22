@@ -7,6 +7,7 @@ function backendGet(url, callback) {
     $.ajax({
         url: API_URL + url,
         type: 'GET',
+        contentType: 'json',
         success: function(data){
             callback(null, data);
         },
