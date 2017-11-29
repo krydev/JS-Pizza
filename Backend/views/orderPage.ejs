@@ -38,11 +38,11 @@
             <div class="col-md-5 order-summary">
                 <div class="bs-callout bs-callout-warning">
                     <h4>Інформація про замовлення</h4>
-                    <div class="order-time">
+                    <div id="order-time">
                         <b>Приблизний час доставки: </b>
                         <span>невідомий</span>
                     </div>
-                    <div class="order-address">
+                    <div id="order-address">
                         <b>Адреса доставки: </b>
                         <span>невідома</span>
                     </div>
@@ -53,6 +53,16 @@
     <div class="submit-row">
         <a href="#" class="btn btn-warning" id="btn-submit">Далі <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
+    <div id="googleMap"></div>
 </div>
 
 <% include common/footer.ejs %>
+
+
+<!-- Google Maps API -->
+<script	type="text/javascript"
+           src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC6BY-mTILHf2P5cyPqP887caRFT-tyf70">
+</script>
+
+</body>
+</html>
