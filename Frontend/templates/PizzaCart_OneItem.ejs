@@ -1,8 +1,4 @@
 
-<% var sizeMap = {
-    "big_size" : "Велика",
-    "small_size" : "Мала"
-}%>
 
 <% if($("#btn-order").length === 0) {
     var ending = (quantity > 0 && quantity < 5) ? "піци" : "піц";
@@ -15,7 +11,7 @@
 
 <div class="order-template">
     <div class="pizza-title">
-        <%= pizza.title %> (<%= sizeMap[size] %>)
+        <%= pizza.title %> (<%= sizeDisplay %>)
     </div>
     <div class="stats-block">
         <span class="pizza-stats">

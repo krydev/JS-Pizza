@@ -234,9 +234,23 @@ function initSubmitHandler(PizzaCart, backend){
             };
             backend.createOrder(order_data, function (err, server_response) {
                 if (err) {
-                    console.log('An error occurred while trying to create a pizza order.');
+                    console.log('An error occurred while trying to create a pizza Order.');
                 } else {
-                    alert("Your order has been successfully created!");
+                    LiqPayCheckout.init({
+                        data: server_response.data,
+                        signature: server_response.signature,
+                        embedTo: "#liqpay",
+                        language: "uk",
+                        mode: "popup"	//	embed	||	popup
+                    }).on("liqpay.callback", function(data){
+                        console.log(data.status);
+                        console.log(data);
+
+                    }).on("liqpay.ready", function(data){
+                        //	ready
+                    }).on("liqpay.close", function(data){
+                        // close
+                    });
                 }
             });
         }

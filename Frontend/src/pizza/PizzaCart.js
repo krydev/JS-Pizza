@@ -11,12 +11,18 @@ var PizzaSize = {
     Small: "small_size"
 };
 
+var SizeMap = {
+    "big_size": "Велика",
+    "small_size": "Мала"
+};
+
 //Змінна в якій зберігаються перелік піц в кошику
 var Cart = [];
 var Cart_Info = {
     total_count : 0,
     total_price : 0
 };
+
 
 //HTML едемент куди будуть додаватися піци
 var $cart = $("#cart");
@@ -28,6 +34,7 @@ function addToCart(pizza, size) {
     var toAdd  = {
         pizza: pizza,
         size: size,
+        sizeDisplay: SizeMap[size],
         quantity: 1
     };
     Cart_Info.total_price += pizza[size].price;
